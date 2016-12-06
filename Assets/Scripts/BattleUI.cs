@@ -17,4 +17,9 @@ public class BattleUI : MonoBehaviour {
         enemyHPText.GetComponent<Text>().text = GameObject.FindGameObjectWithTag("Enemy").GetComponent<Enemy>().HP.ToString();
         playerHPText.GetComponent<Text>().text = GameObject.FindGameObjectWithTag("Player").GetComponent<BattlePlayerController>().localPlayerData.HP.ToString();
     }
+
+    public void SceneChanged()
+    {
+        Application.LoadLevel("1");
+    }
 }

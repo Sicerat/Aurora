@@ -23,7 +23,7 @@ public class BattlePlayerController : MonoBehaviour {
         GameMasterScript.Instance.savedPlayerData = localPlayerData;
     }
 
-    public void OnDestroy()
+    void OnDestroy()
     {
         SavePlayer();
     }

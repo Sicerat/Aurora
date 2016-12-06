@@ -9,6 +9,7 @@ public class PlayerStatistics : MonoBehaviour {
     public float XP;
     public int currentRow;
     public int currentColumn;
+    public Vector3 position;
 	// Use this for initialization
 	void Start () {
 	

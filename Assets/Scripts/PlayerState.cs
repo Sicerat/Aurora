@@ -25,11 +25,20 @@ public class PlayerState : MonoBehaviour {
     void Start()
     {
         localPlayerData = GameMasterScript.Instance.savedPlayerData;
+        transform.position = GameMasterScript.Instance.savedPlayerData.position;
+    }
+
+    public void SavePlayer()
+    {
+        GameMasterScript.Instance.savedPlayerData = localPlayerData;
     }
 
     void Update()
     {
 
     }
-
+     void OnDestroy()
+    {
+        SavePlayer();
+    }
 }
