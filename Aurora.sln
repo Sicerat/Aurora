@@ -1,7 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2015
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Aurora.CSharp", "Aurora.CSharp.csproj", "{138709C5-25E3-46B4-A01C-D4F9456BA57A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Aurora.Logic", "..\Aurora.Logic\Aurora.Logic.csproj", "{7537BD61-7743-4343-A4D8-80EA29FD7894}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -13,6 +17,10 @@ Global
 		{138709C5-25E3-46B4-A01C-D4F9456BA57A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{138709C5-25E3-46B4-A01C-D4F9456BA57A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{138709C5-25E3-46B4-A01C-D4F9456BA57A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7537BD61-7743-4343-A4D8-80EA29FD7894}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7537BD61-7743-4343-A4D8-80EA29FD7894}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7537BD61-7743-4343-A4D8-80EA29FD7894}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7537BD61-7743-4343-A4D8-80EA29FD7894}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
