@@ -18,52 +18,67 @@ public class PlayerController : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.UpArrow))
         {
-            CheckPoint(-1, 0);
-            GetComponent<PlayerState>().localPlayerData.currentRow--;
-            transform.Translate(0, 1, 0);
+            if (CheckPoint(-1, 0))
+            {
+                GetComponent<PlayerState>().localPlayerData.currentRow--;
+                transform.Translate(0, 1, 0);
+            }
             GetComponent<PlayerState>().localPlayerData.position = transform.position;
+            
 
         }
         if (Input.GetKeyDown(KeyCode.DownArrow))
         {
-            CheckPoint(1, 0);
-            GetComponent<PlayerState>().localPlayerData.currentRow++;
-            transform.Translate(0, -1, 0);
+            if (CheckPoint(1, 0))
+            {
+                GetComponent<PlayerState>().localPlayerData.currentRow++;
+                transform.Translate(0, -1, 0);
+            }
             GetComponent<PlayerState>().localPlayerData.position = transform.position;
 
         }
         if (Input.GetKeyDown(KeyCode.LeftArrow))
         {
-            CheckPoint(0, -1);
-            GetComponent<PlayerState>().localPlayerData.currentColumn--;
-            transform.Translate(-1, 0, 0);
+            if (CheckPoint(0, -1))
+            {
+                GetComponent<PlayerState>().localPlayerData.currentColumn--;
+                transform.Translate(-1, 0, 0);
+            }
             GetComponent<PlayerState>().localPlayerData.position = transform.position;
 
         }
         if (Input.GetKeyDown(KeyCode.RightArrow))
         {
-            CheckPoint(0, 1);
-            GetComponent<PlayerState>().localPlayerData.currentColumn++;
-            transform.Translate(1, 0, 0);
+            if (CheckPoint(0, 1))
+            {
+                GetComponent<PlayerState>().localPlayerData.currentColumn++;
+                transform.Translate(1, 0, 0);
+            }
             GetComponent<PlayerState>().localPlayerData.position = transform.position;
 
         }
 
     }
 
-    public void CheckPoint(int deltaRow, int deltaColumn)
+    public bool CheckPoint(int deltaRow, int deltaColumn)
     {
         var nextPoint = GameObject.Find("Point" + (GetComponent<PlayerState>().localPlayerData.currentRow + deltaRow) + (GetComponent<PlayerState>().localPlayerData.currentColumn + deltaColumn));
         //Debug.Log(nextPoint.name + ", " + nextPoint.GetComponent<PointManager>().enemy);
-        if (nextPoint.GetComponent<PointManager>().thing == "Waterling")
+        if (nextPoint.GetComponent<PointManager>().tag == "Enemy")
         {
             
             Application.LoadLevel("Battle");
+            return false;
         }
-        if(nextPoint.GetComponent<PointManager>().thing == "Merchant")
+        if(nextPoint.GetComponent<PointManager>().tag == "Obstacle")
         {
-
+            return false;
         }
+        if (nextPoint.GetComponent<PointManager>().tag == "Shop")
+        {
+            return false;
+        }
+        return true;
     }
 
     void OnDestroy()
