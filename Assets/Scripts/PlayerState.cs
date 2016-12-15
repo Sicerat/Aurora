@@ -25,7 +25,6 @@ public class PlayerState : MonoBehaviour {
     void Start()
     {
         localPlayerData = GameMasterScript.Instance.savedPlayerData;
-        transform.position = GameMasterScript.Instance.savedPlayerData.position;
     }
 
     public void SavePlayer()

@@ -3,6 +3,7 @@ using System.Collections;
 using System;
 using System.Linq;
 using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
@@ -66,8 +67,8 @@ public class PlayerController : MonoBehaviour
         //Debug.Log(nextPoint.name + ", " + nextPoint.GetComponent<PointManager>().enemy);
         if (nextPoint.GetComponent<PointManager>().tag == "Enemy")
         {
-            
-            Application.LoadLevel("Battle");
+            GetComponent<PlayerState>().localPlayerData.things = nextPoint.GetComponent<PointManager>().things;
+            SceneManager.LoadScene("Battle");
             return false;
         }
         if(nextPoint.GetComponent<PointManager>().tag == "Obstacle")

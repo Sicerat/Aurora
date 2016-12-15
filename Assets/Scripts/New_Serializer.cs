@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Runtime.Serialization.Json;
+//using System.Runtime.Serialization.Json;
 using System.Text;
 
-namespace Assets.Scripts
+/* namespace Assets.Scripts
 {
     public class New_Serializer
     {
@@ -28,3 +28,4 @@ namespace Assets.Scripts
         }
     }
 }
+*/

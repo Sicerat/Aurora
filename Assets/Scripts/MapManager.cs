@@ -18,7 +18,7 @@ public class MapManager : MonoBehaviour {
                     break;
                 case 1:
                     points[i].GetComponent<PointManager>().things.Add("Terrain/tile1");
-                    points[i].GetComponent<PointManager>().things.Add("Waterling");
+                    points[i].GetComponent<PointManager>().things.Add("TimeKiller");
                     points[i].GetComponent<PointManager>().tag = "Enemy";
                     break;
                 case 2:

@@ -3,7 +3,7 @@ using System.Collections;
 using UnityEngine.UI;
 
 public class Enemy : MonoBehaviour {
-    public int HP = 100;
+    public float HP = 100;
     GameObject enemyHPText;
     // Use this for initialization
     void Start () {
@@ -14,9 +14,9 @@ public class Enemy : MonoBehaviour {
 	void Update () {
         enemyHPText.GetComponent<Text>().text = HP.ToString();
 	}
-    
-    public void ReceiveDamage()
+
+    public void ReceiveDamage(float modificator)
     {
-        HP = HP - 10;
+        HP = HP - 10 * modificator;
     }
 }
