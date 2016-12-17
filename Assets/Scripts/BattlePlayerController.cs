@@ -2,6 +2,7 @@
 using System.Collections;
 
 public class BattlePlayerController : MonoBehaviour {
+    public bool OnWin = false;
     public PlayerStatistics localPlayerData = new PlayerStatistics();
 	// Use this for initialization
 	void Start () {
@@ -20,6 +21,15 @@ public class BattlePlayerController : MonoBehaviour {
 
     public void SavePlayer()
     {
+        if (OnWin)
+        {
+            Debug.Log("gfgfg");
+            localPlayerData.XP++;
+            GameMasterScript.Instance.plan[GameMasterScript.Instance.PlayerEnterBattlePoint_row * 3 + GameMasterScript.Instance.PlayerEnterBattlePoint_column] = 0;
+            localPlayerData.position = GameMasterScript.Instance.PlayerEnterBattlePoint_position;
+            localPlayerData.currentRow = GameMasterScript.Instance.PlayerEnterBattlePoint_row+1;
+            localPlayerData.currentColumn = GameMasterScript.Instance.PlayerEnterBattlePoint_column+1;
+        }
         GameMasterScript.Instance.savedPlayerData = localPlayerData;
     }
 

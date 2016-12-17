@@ -52,6 +52,8 @@ public class GameMenu : MonoBehaviour {
             if (GUI.Button(new Rect((float)(Screen.width / 2), (float)(Screen.height / 2) - 100f, 150f, 45f), "В меню"))
             {
                 ispaused = false;
+                Time.timeScale = 1;
+                Destroy(GameObject.Find("GameMaster"));
                 Application.LoadLevel("MainMenu");
             }
             

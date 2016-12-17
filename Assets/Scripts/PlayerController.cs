@@ -68,6 +68,9 @@ public class PlayerController : MonoBehaviour
         if (nextPoint.GetComponent<PointManager>().tag == "Enemy")
         {
             GetComponent<PlayerState>().localPlayerData.things = nextPoint.GetComponent<PointManager>().things;
+            GameMasterScript.Instance.PlayerEnterBattlePoint_row = nextPoint.GetComponent<PointManager>().row;
+            GameMasterScript.Instance.PlayerEnterBattlePoint_column = nextPoint.GetComponent<PointManager>().column;
+            GameMasterScript.Instance.PlayerEnterBattlePoint_position = nextPoint.transform.position;
             SceneManager.LoadScene("Battle");
             return false;
         }

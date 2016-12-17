@@ -6,8 +6,8 @@ public class PointManager : MonoBehaviour {
     public List<string> things = new List<string>();
     public string pointName { get { return gameObject.name; } }
     public int Id { get; set; }
-    public int row { get { return int.Parse(pointName[5].ToString()); }  }
-    public int column { get { return int.Parse(pointName[6].ToString()); } }
+    public int row { get; set;  }
+    public int column { get; set; }
     public string tag { get; set; }
     // Use this for initialization
     void Start () {

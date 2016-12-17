@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine.UI;
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 
 public class BattleController : MonoBehaviour
 {
@@ -71,13 +71,14 @@ public class BattleController : MonoBehaviour
 
     void GameOver()
     {
-        Application.LoadLevel("MainMenu");
+        Destroy(GameObject.Find("GameMaster"));
+        SceneManager.LoadScene("MainMenu");
     }
 
     void Win()
     {
-        player.GetComponent<BattlePlayerController>().localPlayerData.XP++;
-        Application.LoadLevel("1");
+        player.OnWin = true;
+        SceneManager.LoadScene("1");
     }
 }
 

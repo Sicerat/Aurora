@@ -86,6 +86,7 @@
     <Compile Include="Assets\Scripts\MapManager.cs" />
     <Compile Include="Assets\Scripts\MapObjects\EnemyInterface.cs" />
     <Compile Include="Assets\Scripts\MapObjects\MapObject.cs" />
+    <Compile Include="Assets\Scripts\MapObjects\TimeCaster.cs" />
     <Compile Include="Assets\Scripts\MapObjects\TimeKiller.cs" />
     <Compile Include="Assets\Scripts\New_Connection.cs" />
     <Compile Include="Assets\Scripts\New_Generator.cs" />
