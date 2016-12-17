@@ -16,7 +16,7 @@ public class GameMasterScript : MonoBehaviour {
         {
             DontDestroyOnLoad(gameObject);
             Instance = this;
-            int[] loaded = new int[] { 0, 0, 1, 0, 2, 0, 0, 2, 3 };
+            int[] loaded = new int[] { 0, 0, 1, 0, 2, 0, 0, 2, 3, 0, 0, 3, 0, 2, 1, 1 };
             Instance.plan.AddRange(loaded);
             Debug.Log("YO");
         }
