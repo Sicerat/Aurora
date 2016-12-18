@@ -73,11 +73,19 @@
     <Reference Include="UnityEditor">
       <HintPath>Library\UnityAssemblies\UnityEditor.dll</HintPath>
     </Reference>
+    <Reference Include="Mono.Data.Sqlite">
+      <HintPath>Assets\Plugins\Mono.Data.Sqlite.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data">
+      <HintPath>Assets\Plugins\System.Data.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\BattleController.cs" />
     <Compile Include="Assets\Scripts\BattlePlayerController.cs" />
     <Compile Include="Assets\Scripts\BattleUI.cs" />
+    <Compile Include="Assets\Scripts\DBEditor.cs" />
+    <Compile Include="Assets\Scripts\DBEditorScript.cs" />
     <Compile Include="Assets\Scripts\DropdownScript.cs" />
     <Compile Include="Assets\Scripts\Enemy.cs" />
     <Compile Include="Assets\Scripts\GameMasterScript.cs" />

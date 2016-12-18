@@ -8,8 +8,22 @@ using System.Data;
 
 namespace Assets.Scripts
 {
-    class DBEditor
+    class DBEditor: MonoBehaviour
     {
+        public List<string> dataFromDB = new List<string>();
+        void Start()
+        {
+            //Filler();
+            dataFromDB = Getter();
+        }
+
+        void Update()
+        {
+            if(dataFromDB.Count == 0)
+            {
+                dataFromDB = Getter();
+            } 
+        }
         public void Filler()
         {
             string conn = "URI=file:" + Application.dataPath + "/dblevels.db"; //Path to database
@@ -17,26 +31,26 @@ namespace Assets.Scripts
             List<string> str = new List<string>();
             dbconn = (IDbConnection)new SqliteConnection(conn);
             dbconn.Open(); //Open connection to the database
-            IDbCommand dbcmd = dbconn.CreateCommand();
-
+            Debug.Log("I TRY I TRY");
             int n = 3;
 
             for (int i = 1; i < 8; i++)
             {
-                New_Generator g = new New_Generator();
-                string sqlQuery2 = "INSERT INTO Levels(Id, Matrix) " + "VALUES(" + i + ", '" + g.StringMatrixGenerator(n) + "')";
+                IDbCommand dbcmd = dbconn.CreateCommand();
+                string sqlQuery2 = "INSERT INTO Levels(Id, Matrix) " + "VALUES(" + i + ", '" + New_Generator.StringMatrixGenerator(n) + "')";
                 dbcmd.CommandText = sqlQuery2;
-
+                dbcmd.ExecuteReader();
                 n++;
+                dbcmd.Dispose();
+                dbcmd = null;
             }
 
-            dbcmd.Dispose();
-            dbcmd = null;
+
             dbconn.Close();
             dbconn = null;
         }
 
-        public void Getter()
+        public List<string> Getter()
         {
             string conn = "URI=file:" + Application.dataPath + "/dblevels.db";
             IDbConnection dbconn;
@@ -60,6 +74,7 @@ namespace Assets.Scripts
             dbcmd = null;
             dbconn.Close();
             dbconn = null;
+            return str;
         }
     }
 }
