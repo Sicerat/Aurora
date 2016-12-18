@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class MainMenuScript : MonoBehaviour {
@@ -19,9 +20,14 @@ public class MainMenuScript : MonoBehaviour {
     public void GenerateLevel()
     {
         GameMasterScript.Instance.plan = GameMasterScript.Instance.GetData(GameMasterScript.Instance.mapSize);
-        Application.LoadLevel("1");
+        SceneManager.LoadScene("1");
     }
 
+    public void LoadLevel()
+    {
+        GameMasterScript.Instance.plan = GameMasterScript.Instance.LoadData(GameMasterScript.Instance.selectedLvl);
+        SceneManager.LoadScene("1");
+    }
 
     public void OnGUI()
     {

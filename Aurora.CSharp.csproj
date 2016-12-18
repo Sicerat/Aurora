@@ -85,11 +85,11 @@
     <Compile Include="Assets\Scripts\BattlePlayerController.cs" />
     <Compile Include="Assets\Scripts\BattleUI.cs" />
     <Compile Include="Assets\Scripts\DBEditor.cs" />
-    <Compile Include="Assets\Scripts\DBEditorScript.cs" />
     <Compile Include="Assets\Scripts\DropdownScript.cs" />
     <Compile Include="Assets\Scripts\Enemy.cs" />
     <Compile Include="Assets\Scripts\GameMasterScript.cs" />
     <Compile Include="Assets\Scripts\GameMenu.cs" />
+    <Compile Include="Assets\Scripts\LevelSelectorScript.cs" />
     <Compile Include="Assets\Scripts\MainMenuScript.cs" />
     <Compile Include="Assets\Scripts\MapManager.cs" />
     <Compile Include="Assets\Scripts\MapObjects\EnemyInterface.cs" />
