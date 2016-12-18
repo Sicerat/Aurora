@@ -5,9 +5,9 @@ using System.Text;
 
 namespace Assets.Scripts
 {
-    class New_Generator
+    public static class New_Generator
     {
-        public string StringMatrixGenerator(int n)
+        public static string StringMatrixGenerator(int n)
         {
             Random r = new Random();
             StringBuilder sb = new StringBuilder(n * n);

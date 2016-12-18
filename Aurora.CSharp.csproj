@@ -78,8 +78,8 @@
     <Compile Include="Assets\Scripts\BattleController.cs" />
     <Compile Include="Assets\Scripts\BattlePlayerController.cs" />
     <Compile Include="Assets\Scripts\BattleUI.cs" />
+    <Compile Include="Assets\Scripts\DropdownScript.cs" />
     <Compile Include="Assets\Scripts\Enemy.cs" />
-    <Compile Include="Assets\Scripts\ForAttackButton.cs" />
     <Compile Include="Assets\Scripts\GameMasterScript.cs" />
     <Compile Include="Assets\Scripts\GameMenu.cs" />
     <Compile Include="Assets\Scripts\MainMenuScript.cs" />

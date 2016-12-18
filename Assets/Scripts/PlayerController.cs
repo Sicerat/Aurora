@@ -78,10 +78,6 @@ public class PlayerController : MonoBehaviour
         {
             return false;
         }
-        if (nextPoint.GetComponent<PointManager>().tag == "Shop")
-        {
-            return false;
-        }
         return true;
     }
 

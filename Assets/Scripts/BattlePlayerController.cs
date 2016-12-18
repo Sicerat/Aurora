@@ -25,7 +25,7 @@ public class BattlePlayerController : MonoBehaviour {
         {
             Debug.Log("gfgfg");
             localPlayerData.XP++;
-            GameMasterScript.Instance.plan[GameMasterScript.Instance.PlayerEnterBattlePoint_row * 3 + GameMasterScript.Instance.PlayerEnterBattlePoint_column] = 0;
+            GameMasterScript.Instance.plan[GameMasterScript.Instance.PlayerEnterBattlePoint_row * GameMasterScript.Instance.mapSize + GameMasterScript.Instance.PlayerEnterBattlePoint_column] = 0;
             localPlayerData.position = GameMasterScript.Instance.PlayerEnterBattlePoint_position;
             localPlayerData.currentRow = GameMasterScript.Instance.PlayerEnterBattlePoint_row+1;
             localPlayerData.currentColumn = GameMasterScript.Instance.PlayerEnterBattlePoint_column+1;

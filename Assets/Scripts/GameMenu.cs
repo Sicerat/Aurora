@@ -43,13 +43,13 @@ public class GameMenu : MonoBehaviour {
         if (guipaused == true)
         {
             Cursor.visible = true;
-            if (GUI.Button(new Rect((float)(Screen.width / 2), (float)(Screen.height / 2) - 150f, 150f, 45f), "Продолжить"))
+            if (GUI.Button(new Rect((float)(Screen.width / 2) - 75f, (float)(Screen.height / 2) - 150f, 150f, 45f), "Продолжить"))
             {
                 ispaused = false;
                 Cursor.visible = false;
                 Time.timeScale = 1;
             }
-            if (GUI.Button(new Rect((float)(Screen.width / 2), (float)(Screen.height / 2) - 100f, 150f, 45f), "В меню"))
+            if (GUI.Button(new Rect((float)(Screen.width / 2) - 75f, (float)(Screen.height / 2) - 100f, 150f, 45f), "В меню"))
             {
                 ispaused = false;
                 Time.timeScale = 1;

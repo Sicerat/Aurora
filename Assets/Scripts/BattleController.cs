@@ -8,16 +8,19 @@ public class BattleController : MonoBehaviour
 {
     
     float time;
+    float atime;
     BattlePlayerController player;
+    Button AttackButton;
     int playerAttackType;
     float damage;
     Button attack;
     Text timeText;
     EnemyInterface enemy;
+    public bool OnLose;
     // Use this for initialization
     void Start()
     {
-        
+        AttackButton = GameObject.Find("Attack").GetComponent<Button>();
         time = Random.value * 10 + 1f;
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<BattlePlayerController>();
         playerAttackType = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerState>().localPlayerData.attackType;
@@ -31,7 +34,25 @@ public class BattleController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(enemy.HP <= 0)
+        atime = time - Mathf.Floor(time);
+        if (atime <= 0.2)
+        {
+            var colors = AttackButton.colors;
+            colors.normalColor = Color.red;
+            colors.pressedColor = Color.red;
+            colors.highlightedColor = Color.red;
+            AttackButton.colors = colors;
+        }
+        if (atime > 0.2)
+        {
+            var colors = AttackButton.colors;
+            colors.normalColor = Color.white;
+            colors.pressedColor = Color.white;
+            colors.highlightedColor = Color.white;
+            AttackButton.colors = colors;
+        }
+
+        if (enemy.HP <= 0)
         {
             Win();
         }
@@ -43,36 +64,37 @@ public class BattleController : MonoBehaviour
         time = time - Time.deltaTime;
         if (time <= 0)
         {
-            player.GetComponent<BattlePlayerController>().ReceiveDamage();
-            time = Random.value * 10 + 1f;
-            timeText.text = time.ToString();
+            GameOver();
+            //player.GetComponent<BattlePlayerController>().ReceiveDamage();
+            //time = Random.value * 10 + 1f;
+            //timeText.text = time.ToString();
         }
-        
+
 
     }
 
     public void Attack()
     {
-
-        if (time < 0.1)
+        if (atime < 0.2)
         {
-           enemy.ReceiveDamage(playerAttackType, damage);
+            enemy.ReceiveDamage(playerAttackType, damage);
         }
-        else if (time < 0.5 && time >= 0.1)
-            enemy.ReceiveDamage(playerAttackType, damage*0.8f);
-        else if (time < 1 && time >= 0.5)
-            enemy.ReceiveDamage(playerAttackType, damage*0.5f);
-        else if (time >= 1)
+        else if (atime < 0.5 && atime >= 0.2)
+        {
+            enemy.ReceiveDamage(playerAttackType, damage * 0.5f);
             player.ReceiveDamage();
-        time = Random.value * 10 + 1f;
-        timeText.text = time.ToString();
+        }
+        else if (atime < 1 && atime >= 0.5)
+        {
+            player.ReceiveDamage();
+        }
 
     }
 
     void GameOver()
     {
-        Destroy(GameObject.Find("GameMaster"));
-        SceneManager.LoadScene("MainMenu");
+        OnLose = true;
+        Time.timeScale = 0;
     }
 
     void Win()
