@@ -52,9 +52,6 @@
     <Reference Include="UnityEngine">
       <HintPath>Library\UnityAssemblies\UnityEngine.dll</HintPath>
     </Reference>
-    <Reference Include="UnityEngine.Advertisements">
-      <HintPath>Library\UnityAssemblies\UnityEngine.Advertisements.dll</HintPath>
-    </Reference>
     <Reference Include="UnityEngine.UI">
       <HintPath>Library\UnityAssemblies\UnityEngine.UI.dll</HintPath>
     </Reference>
@@ -69,9 +66,6 @@
     </Reference>
     <Reference Include="UnityEngine.HoloLens">
       <HintPath>Library\UnityAssemblies\UnityEngine.HoloLens.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.Purchasing">
-      <HintPath>Library\UnityAssemblies\UnityEngine.Purchasing.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.VR">
       <HintPath>Library\UnityAssemblies\UnityEngine.VR.dll</HintPath>
@@ -91,8 +85,9 @@
     <Compile Include="Assets\Scripts\BattlePlayerController.cs" />
     <Compile Include="Assets\Scripts\BattleUI.cs" />
     <Compile Include="Assets\Scripts\DBEditor.cs" />
+    <Compile Include="Assets\Scripts\DBEditorScript.cs" />
+    <Compile Include="Assets\Scripts\DropdownScript.cs" />
     <Compile Include="Assets\Scripts\Enemy.cs" />
-    <Compile Include="Assets\Scripts\ForAttackButton.cs" />
     <Compile Include="Assets\Scripts\GameMasterScript.cs" />
     <Compile Include="Assets\Scripts\GameMenu.cs" />
     <Compile Include="Assets\Scripts\MainMenuScript.cs" />
@@ -101,10 +96,7 @@
     <Compile Include="Assets\Scripts\MapObjects\MapObject.cs" />
     <Compile Include="Assets\Scripts\MapObjects\TimeCaster.cs" />
     <Compile Include="Assets\Scripts\MapObjects\TimeKiller.cs" />
-    <Compile Include="Assets\Scripts\New_Connection.cs" />
     <Compile Include="Assets\Scripts\New_Generator.cs" />
-    <Compile Include="Assets\Scripts\New_LevelAdder.cs" />
-    <Compile Include="Assets\Scripts\New_Serializer.cs" />
     <Compile Include="Assets\Scripts\PlayerController.cs" />
     <Compile Include="Assets\Scripts\PlayerState.cs" />
     <Compile Include="Assets\Scripts\PlayerStatistics.cs" />
